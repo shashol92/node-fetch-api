@@ -2,6 +2,8 @@ const express = require("express");
 const fetch = require("node-fetch");
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.get('/', (req, res)=> {
     res.send("Hello World");
     // fetch('https://jsonplaceholder.typicode.com/users')
@@ -11,4 +13,6 @@ app.get('/', (req, res)=> {
     // })
 });
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Server running at port ${port}`)
+});
